@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- ======================= HEAD: служебная часть страницы ======================= -->
+<meta charset="UTF-8">
+<!-- viewport-fit=cover: контент заходит под «чёлку» телефона, отступы задаёт CSS -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Классы — Кодекс Лотрика</title>
+<meta name="description" content="Все десять стартовых классов Dark Souls III: характеристики, снаряжение, советы по выбору.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cg transform='rotate(-30 12 12)'%3E%3Ccircle cx='7.3' cy='3.2' r='1.45'/%3E%3Crect x='5.5' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Crect x='14.9' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Ccircle cx='16.7' cy='20.8' r='1.45'/%3E%3C/g%3E%3C/svg%3E">
+<!-- Шрифты: Inter — весь интерфейс и текст, Instrument Serif — курсивные акценты -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&family=Instrument+Serif:ital@1&display=swap">
+<!-- Единый файл стилей для всего сайта (внутри подробные комментарии по разделам) -->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<!-- no-js: пока скрипт не отработал, всё видно сразу; script.js уберёт этот класс -->
+<body style="background:#000;color:#fff" class="no-js">
+
+<!-- СЛОЙ 1: плёночное зерно поверх всей страницы (чисто декор, клики не мешает) -->
+<div class="grain"></div>
+<!-- СЛОЙ 2: мягкое свечение сверху за контентом -->
+<div class="bg-glow"></div>
+
+<!-- СЛОЙ 3: весь видимый контент страницы -->
+<div class="page" id="top">
+
+  <!-- Затемнение под мобильным меню (виден только на телефоне, когда меню открыто) -->
+  <div class="menu-backdrop"></div>
+
+  <!-- ===================== ШАПКА ===================== -->
+  <header class="header">
+    <!-- Логотип: клик ведёт на главную -->
+    <a class="logo appear appear--scale" href="index.html" aria-label="Кодекс Лотрика — на главную" style="--d:.08s">
+      <svg viewBox="0 0 24 24" fill="currentColor"><g transform="rotate(-30 12 12)"><circle cx="7.3" cy="3.2" r="1.45"/><rect x="5.5" y="4.7" width="3.6" height="14.6" rx="1.8"/><rect x="14.9" y="4.7" width="3.6" height="14.6" rx="1.8"/><circle cx="16.7" cy="20.8" r="1.45"/></g></svg>
+      <span>Кодекс<span class="logo-suffix"> Лотрика</span></span>
+    </a>
+    <!-- Главное меню. Текущий раздел помечен aria-current="page" — он подсвечивается -->
+    <nav id="site-nav" aria-label="Основное меню">
+      <a class="appear appear--scale" href="boss.html" style="--d:.16s">Боссы</a>
+      <a class="appear appear--soft" href="gun.html" style="--d:.28s">Оружие</a>
+      <a class="appear appear--scale" href="gear.html" style="--d:.40s">Экипировка</a>
+      <a class="appear appear--soft" href="magic.html" style="--d:.52s">Магия</a>
+      <a class="appear appear--scale" href="class.html" aria-current="page" style="--d:.60s">Классы</a>
+    </nav>
+    <!-- Кнопка справа (на телефоне скрыта) -->
+    <a class="btn btn-solid header-cta appear appear--scale" href="index.html" style="--d:.34s">На главную</a>
+    <!-- Бургер: открывает меню на телефоне -->
+    <button class="burger appear appear--scale" style="--d:.34s" aria-controls="site-nav" aria-expanded="false" aria-label="Открыть меню"><i></i><i></i><i></i></button>
+  </header>
+
+  <!-- ===================== ДВЕ КОЛОНКИ ===================== -->
+  <div class="layout">
+
+    <!-- ЛЕВАЯ КОЛОНКА: основной контент страницы -->
+    <main class="content">
+<!-- Хлебная крошка: возврат к родительскому разделу -->
+      <a class="badge crumb" href="index.html">← На главную</a>
+      <h1>Классы</h1>
+      <p class="lead">Десять стартовых классов. Выбор задаёт только стартовые параметры и снаряжение: позже любого персонажа можно развить в любую сторону.</p>
+<!-- Раздел «Выберите класс» -->
+      <section class="lore-section rv">
+        <h2>Выберите класс</h2>
+        <div class="grid">
+        <a class="card rv" href="class-knight.html" style="--rd:0.00s"><h3>Рыцарь</h3><span class="en">Knight</span><p>Тем, кто привык прятаться за щитом, а не уворачиваться перекатами.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="class-mercenary.html" style="--rd:0.08s"><h3>Наёмник</h3><span class="en">Mercenary</span><p>Подвижный персонаж, которому легко уходить от атак.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="class-warrior.html" style="--rd:0.16s"><h3>Воин</h3><span class="en">Warrior</span><p>Агрессивный стиль игры: большой урон при хорошей живучести.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="class-herald.html" style="--rd:0.00s"><h3>Глашатай</h3><span class="en">Herald</span><p>По сути паладин: не такой крепкий, как Рыцарь, но с первых минут умеет лечиться.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="class-thief.html" style="--rd:0.08s"><h3>Вор</h3><span class="en">Thief</span><p>Рекомендуется тем, кто уже знаком с серией.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="class-assassin.html" style="--rd:0.16s"><h3>Убийца</h3><span class="en">Assassin</span><p>Для тех, кто любит бить врагов со спины.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="class-sorcerer.html" style="--rd:0.00s"><h3>Чародей</h3><span class="en">Sorcerer</span><p>Настоящий маг: хрупкий, но с мощным уроном на расстоянии.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="class-pyromancer.html" style="--rd:0.08s"><h3>Пиромант</h3><span class="en">Pyromancer</span><p>Стандартный боевой маг: огненные шары издали и топор вблизи.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="class-cleric.html" style="--rd:0.16s"><h3>Клирик</h3><span class="en">Cleric</span><p>Маг-целитель, который при необходимости дерётся вблизи и лечит себя.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="class-deprived.html" style="--rd:0.00s"><h3>Нищий</h3><span class="en">Deprived</span><p>Только для опытных игроков: все характеристики одинаковы, и персонажа можно растить по своему плану с первых шагов.</p><span class="card-more">Подробнее →</span></a>
+        </div>
+      </section>
+<!-- Раздел «Сравнение стартовых характеристик» -->
+      <section class="lore-section rv">
+        <h2>Сравнение стартовых характеристик</h2>
+        <p>Столбцы по порядку: уровень души, жизненная сила, ученость, стойкость, физическая мощь, сила, ловкость, интеллект, вера, удача.</p>
+        <div class="table-wrap"><table class="data-table"><thead><tr><th>Класс</th><th class=num>Ур.</th><th class=num>Жиз</th><th class=num>Уч</th><th class=num>Стой</th><th class=num>Физ</th><th class=num>Сил</th><th class=num>Лов</th><th class=num>Инт</th><th class=num>Вер</th><th class=num>Уд</th></tr></thead>
+<tbody>
+<tr><td><a href="class-knight.html">Рыцарь</a></td><td class=num>9</td><td class=num>12</td><td class=num>10</td><td class=num>11</td><td class=num>15</td><td class=num>13</td><td class=num>12</td><td class=num>9</td><td class=num>9</td><td class=num>7</td></tr>
+<tr><td><a href="class-mercenary.html">Наёмник</a></td><td class=num>8</td><td class=num>11</td><td class=num>12</td><td class=num>11</td><td class=num>10</td><td class=num>10</td><td class=num>16</td><td class=num>10</td><td class=num>8</td><td class=num>9</td></tr>
+<tr><td><a href="class-warrior.html">Воин</a></td><td class=num>7</td><td class=num>14</td><td class=num>6</td><td class=num>12</td><td class=num>11</td><td class=num>16</td><td class=num>9</td><td class=num>8</td><td class=num>9</td><td class=num>11</td></tr>
+<tr><td><a href="class-herald.html">Глашатай</a></td><td class=num>9</td><td class=num>12</td><td class=num>10</td><td class=num>9</td><td class=num>12</td><td class=num>12</td><td class=num>11</td><td class=num>8</td><td class=num>13</td><td class=num>11</td></tr>
+<tr><td><a href="class-thief.html">Вор</a></td><td class=num>5</td><td class=num>10</td><td class=num>11</td><td class=num>10</td><td class=num>9</td><td class=num>9</td><td class=num>13</td><td class=num>10</td><td class=num>8</td><td class=num>14</td></tr>
+<tr><td><a href="class-assassin.html">Убийца</a></td><td class=num>10</td><td class=num>10</td><td class=num>14</td><td class=num>11</td><td class=num>10</td><td class=num>10</td><td class=num>14</td><td class=num>11</td><td class=num>9</td><td class=num>10</td></tr>
+<tr><td><a href="class-sorcerer.html">Чародей</a></td><td class=num>6</td><td class=num>9</td><td class=num>16</td><td class=num>9</td><td class=num>7</td><td class=num>7</td><td class=num>12</td><td class=num>16</td><td class=num>7</td><td class=num>12</td></tr>
+<tr><td><a href="class-pyromancer.html">Пиромант</a></td><td class=num>8</td><td class=num>11</td><td class=num>12</td><td class=num>10</td><td class=num>8</td><td class=num>12</td><td class=num>9</td><td class=num>14</td><td class=num>14</td><td class=num>7</td></tr>
+<tr><td><a href="class-cleric.html">Клирик</a></td><td class=num>7</td><td class=num>10</td><td class=num>14</td><td class=num>9</td><td class=num>7</td><td class=num>12</td><td class=num>8</td><td class=num>7</td><td class=num>16</td><td class=num>13</td></tr>
+<tr><td><a href="class-deprived.html">Нищий</a></td><td class=num>1</td><td class=num>10</td><td class=num>10</td><td class=num>10</td><td class=num>10</td><td class=num>10</td><td class=num>10</td><td class=num>10</td><td class=num>10</td><td class=num>10</td></tr>
+</tbody></table></div>
+      </section>
+<!-- Раздел «Что делает Удача» -->
+      <section class="lore-section rv">
+        <h2>Что делает Удача</h2>
+        <ul class="tactics-list">
+          <li>Влияет на то, как часто с врагов выпадает сразу несколько предметов.</li>
+          <li>Повышает сопротивление проклятию.</li>
+          <li>Повышает шанс вызвать отравление и кровотечение вашими ударами.</li>
+        </ul>
+      </section>
+<!-- Раздел «Стартовые дары» -->
+      <section class="lore-section rv">
+        <h2>Стартовые дары</h2>
+        <p>В начале игры выбирается один из девяти даров (названия в оригинале).</p>
+        <div class="table-wrap"><table class="data-table"><thead><tr><th>Дар</th><th>Что делает</th></tr></thead>
+<tbody>
+<tr><td>Life Ring</td><td>чуть повышает максимальное здоровье.</td></tr>
+<tr><td>Divine Blessing</td><td>полностью восстанавливает здоровье и снимает все недуги.</td></tr>
+<tr><td>Hidden Blessing</td><td>полностью восстанавливает здоровье.</td></tr>
+<tr><td>Black Firebomb</td><td>мощный взрывной предмет.</td></tr>
+<tr><td>Fire Gem</td><td>материал для улучшения огненного оружия.</td></tr>
+<tr><td>Sovereignless Soul</td><td>даёт много душ при использовании.</td></tr>
+<tr><td>Rusted Gold Coin</td><td>ненадолго повышает шанс найти хорошие вещи.</td></tr>
+<tr><td>Cracked Red Eye Orb</td><td>предмет для вторжений в чужие миры в многопользовательском режиме.</td></tr>
+<tr><td>Young White Branch</td><td>однократно позволяет смешаться с окружением.</td></tr>
+</tbody></table></div>
+      </section>
+    </main>
+
+    <!-- ПРАВАЯ КОЛОНКА: сайдбар. «Содержание» добавляет script.js автоматически -->
+    <aside class="sidebar">
+      <!-- Виджет «Связанные записи»: ссылки на соседние разделы -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Связанные записи</h3>
+        <div class="tag-group">
+          <a href="gear.html" class="tag-btn">Экипировка</a>
+          <a href="magic.html" class="tag-btn">Магия</a>
+          <a href="gun.html" class="tag-btn">Оружие</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===================== ПОДВАЛ ===================== -->
+  <div class="foot"><span>Кодекс Лотрика — фанатская вики по Dark Souls III</span><a href="#top">Наверх</a></div>
+</div>
+
+<!-- Общий скрипт: анимации, меню, оглавление, фильтры -->
+<script src="script.js" defer></script>
+</body>
+</html>

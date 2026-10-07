@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- ======================= HEAD: служебная часть страницы ======================= -->
+<meta charset="UTF-8">
+<!-- viewport-fit=cover: контент заходит под «чёлку» телефона, отступы задаёт CSS -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Улучшение и модификации — Кодекс Лотрика</title>
+<meta name="description" content="Как улучшать оружие и щиты в Dark Souls III: титанит, угли и камни.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cg transform='rotate(-30 12 12)'%3E%3Ccircle cx='7.3' cy='3.2' r='1.45'/%3E%3Crect x='5.5' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Crect x='14.9' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Ccircle cx='16.7' cy='20.8' r='1.45'/%3E%3C/g%3E%3C/svg%3E">
+<!-- Шрифты: Inter — весь интерфейс и текст, Instrument Serif — курсивные акценты -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&family=Instrument+Serif:ital@1&display=swap">
+<!-- Единый файл стилей для всего сайта (внутри подробные комментарии по разделам) -->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<!-- no-js: пока скрипт не отработал, всё видно сразу; script.js уберёт этот класс -->
+<body style="background:#000;color:#fff" class="no-js">
+
+<!-- СЛОЙ 1: плёночное зерно поверх всей страницы (чисто декор, клики не мешает) -->
+<div class="grain"></div>
+<!-- СЛОЙ 2: мягкое свечение сверху за контентом -->
+<div class="bg-glow"></div>
+
+<!-- СЛОЙ 3: весь видимый контент страницы -->
+<div class="page" id="top">
+
+  <!-- Затемнение под мобильным меню (виден только на телефоне, когда меню открыто) -->
+  <div class="menu-backdrop"></div>
+
+  <!-- ===================== ШАПКА ===================== -->
+  <header class="header">
+    <!-- Логотип: клик ведёт на главную -->
+    <a class="logo appear appear--scale" href="index.html" aria-label="Кодекс Лотрика — на главную" style="--d:.08s">
+      <svg viewBox="0 0 24 24" fill="currentColor"><g transform="rotate(-30 12 12)"><circle cx="7.3" cy="3.2" r="1.45"/><rect x="5.5" y="4.7" width="3.6" height="14.6" rx="1.8"/><rect x="14.9" y="4.7" width="3.6" height="14.6" rx="1.8"/><circle cx="16.7" cy="20.8" r="1.45"/></g></svg>
+      <span>Кодекс<span class="logo-suffix"> Лотрика</span></span>
+    </a>
+    <!-- Главное меню. Текущий раздел помечен aria-current="page" — он подсвечивается -->
+    <nav id="site-nav" aria-label="Основное меню">
+      <a class="appear appear--scale" href="boss.html" style="--d:.16s">Боссы</a>
+      <a class="appear appear--soft" href="gun.html" style="--d:.28s">Оружие</a>
+      <a class="appear appear--scale" href="gear.html" aria-current="page" style="--d:.40s">Экипировка</a>
+      <a class="appear appear--soft" href="magic.html" style="--d:.52s">Магия</a>
+      <a class="appear appear--scale" href="class.html" style="--d:.60s">Классы</a>
+    </nav>
+    <!-- Кнопка справа (на телефоне скрыта) -->
+    <a class="btn btn-solid header-cta appear appear--scale" href="index.html" style="--d:.34s">На главную</a>
+    <!-- Бургер: открывает меню на телефоне -->
+    <button class="burger appear appear--scale" style="--d:.34s" aria-controls="site-nav" aria-expanded="false" aria-label="Открыть меню"><i></i><i></i><i></i></button>
+  </header>
+
+  <!-- ===================== ДВЕ КОЛОНКИ ===================== -->
+  <div class="layout">
+
+    <!-- ЛЕВАЯ КОЛОНКА: основной контент страницы -->
+    <main class="content">
+<!-- Хлебная крошка: возврат к родительскому разделу -->
+      <a class="badge crumb" href="gear.html">← Вся экипировка</a>
+      <h1>Улучшение и модификации</h1>
+      <p class="lead">Оружие и щиты улучшают титанитом, а камни меняют тип урона и скалирование. Всё делает кузнец Андре.</p>
+<!-- Раздел «Титанит и уровни» -->
+      <section class="lore-section rv">
+        <h2>Титанит и уровни</h2>
+        <div class="table-wrap"><table class="data-table"><thead><tr><th>Материал</th><th>Что улучшает</th></tr></thead>
+<tbody>
+<tr><td>Titanite Shard</td><td>обычное оружие до +3</td></tr>
+<tr><td>Large Titanite Shard</td><td>с +4 по +6</td></tr>
+<tr><td>Titanite Chunk</td><td>с +7 по +9</td></tr>
+<tr><td>Titanite Slab</td><td>до +10</td></tr>
+<tr><td>Titanite Scale</td><td>особое оружие (оружие из душ) до +4: на 15 чешуй</td></tr>
+<tr><td>Twinkling Titanite</td><td>особое оружие до +5</td></tr>
+</tbody></table></div>
+      </section>
+<!-- Раздел «Модификации камнями» -->
+      <section class="lore-section rv">
+        <h2>Модификации камнями</h2>
+        <ul class="tactics-list">
+          <li>Камень вставляют в оружие или щит у Андре; для большинства нужен уголь (Farron Coal, Sage's Coal, Profaned Coal, Giant's Coal).</li>
+          <li>Raw, Refined и Fire модифицируются без угля.</li>
+          <li>Модификация обычно заменяет базовое скалирование статичным уроном стихии или другим скалированием.</li>
+          <li><strong>Shriving Stone</strong> снимает модификацию.</li>
+        </ul>
+      </section>
+<!-- Раздел «Что даёт каждый камень» -->
+      <section class="lore-section rv">
+        <h2>Что даёт каждый камень</h2>
+        <div class="table-wrap"><table class="data-table"><thead><tr><th>Уголь</th><th>Камни</th></tr></thead>
+<tbody>
+<tr><td>Farron Coal</td><td>Heavy, Sharp, Poison</td></tr>
+<tr><td>Sage's Coal</td><td>Crystal, Blessed, Deep</td></tr>
+<tr><td>Profaned Coal</td><td>Dark, Blood, Hollow</td></tr>
+<tr><td>Giant's Coal</td><td>Lightning, Simple, Chaos</td></tr>
+<tr><td>без угля</td><td>Raw, Refined, Fire</td></tr>
+</tbody></table></div>
+      </section>
+<!-- Раздел «Основные эффекты» -->
+      <section class="lore-section rv">
+        <h2>Основные эффекты</h2>
+        <ul class="tactics-list">
+          <li><strong>Heavy:</strong> растёт скалирование от силы, базовый урон ниже.</li>
+          <li><strong>Sharp:</strong> растёт скалирование от ловкости.</li>
+          <li><strong>Refined:</strong> силу и ловкость балансирует.</li>
+          <li><strong>Raw:</strong> убирает скалирование, но даёт больше базового урона.</li>
+          <li><strong>Crystal / Simple:</strong> магический урон. <strong>Lightning, Fire, Chaos, Deep, Dark:</strong> стихийный или тёмный урон. <strong>Blessed:</strong> лечение и вера. <strong>Blood, Poison:</strong> кровотечение и яд.</li>
+        </ul>
+      </section>
+<!-- Раздел «Что нельзя модифицировать» -->
+      <section class="lore-section rv">
+        <h2>Что нельзя модифицировать</h2>
+        <ul class="tactics-list">
+          <li>Луки, большие луки и арбалеты.</li>
+          <li>Колокольчики, талисманы, посохи, огни пироманта.</li>
+          <li>Любое оружие, которое улучшают мерцающим титанитом или титанитовой чешуёй.</li>
+        </ul>
+      </section>
+<!-- Раздел «Пламя пироманта» -->
+      <section class="lore-section rv">
+        <h2>Пламя пироманта</h2>
+        <p>Пламя улучшает Корникс из Великого болота. Pyromancer's Parting Flame из Ashes of Ariandel доводится до +10 за 12 каждого вида стандартного титанита и одну пластину.</p>
+      </section>
+    </main>
+
+    <!-- ПРАВАЯ КОЛОНКА: сайдбар. «Содержание» добавляет script.js автоматически -->
+    <aside class="sidebar">
+      <!-- Виджет «Связанные записи»: ссылки на соседние разделы -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Связанные записи</h3>
+        <div class="tag-group">
+          <a href="gear.html" class="tag-btn">Экипировка</a>
+          <a href="gun.html" class="tag-btn">Оружие</a>
+          <a href="class.html" class="tag-btn">Классы</a>
+          <a href="magic.html" class="tag-btn">Магия</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===================== ПОДВАЛ ===================== -->
+  <div class="foot"><span>Кодекс Лотрика — фанатская вики по Dark Souls III</span><a href="#top">Наверх</a></div>
+</div>
+
+<!-- Общий скрипт: анимации, меню, оглавление, фильтры -->
+<script src="script.js" defer></script>
+</body>
+</html>

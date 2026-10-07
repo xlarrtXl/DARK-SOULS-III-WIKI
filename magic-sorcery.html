@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- ======================= HEAD: служебная часть страницы ======================= -->
+<meta charset="UTF-8">
+<!-- viewport-fit=cover: контент заходит под «чёлку» телефона, отступы задаёт CSS -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Чародейство — Кодекс Лотрика</title>
+<meta name="description" content="Все 38 заклинаний чародейства Dark Souls III: цена в FP, слоты и требования к интеллекту.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cg transform='rotate(-30 12 12)'%3E%3Ccircle cx='7.3' cy='3.2' r='1.45'/%3E%3Crect x='5.5' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Crect x='14.9' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Ccircle cx='16.7' cy='20.8' r='1.45'/%3E%3C/g%3E%3C/svg%3E">
+<!-- Шрифты: Inter — весь интерфейс и текст, Instrument Serif — курсивные акценты -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&family=Instrument+Serif:ital@1&display=swap">
+<!-- Единый файл стилей для всего сайта (внутри подробные комментарии по разделам) -->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<!-- no-js: пока скрипт не отработал, всё видно сразу; script.js уберёт этот класс -->
+<body style="background:#000;color:#fff" class="no-js">
+
+<!-- СЛОЙ 1: плёночное зерно поверх всей страницы (чисто декор, клики не мешает) -->
+<div class="grain"></div>
+<!-- СЛОЙ 2: мягкое свечение сверху за контентом -->
+<div class="bg-glow"></div>
+
+<!-- СЛОЙ 3: весь видимый контент страницы -->
+<div class="page" id="top">
+
+  <!-- Затемнение под мобильным меню (виден только на телефоне, когда меню открыто) -->
+  <div class="menu-backdrop"></div>
+
+  <!-- ===================== ШАПКА ===================== -->
+  <header class="header">
+    <!-- Логотип: клик ведёт на главную -->
+    <a class="logo appear appear--scale" href="index.html" aria-label="Кодекс Лотрика — на главную" style="--d:.08s">
+      <svg viewBox="0 0 24 24" fill="currentColor"><g transform="rotate(-30 12 12)"><circle cx="7.3" cy="3.2" r="1.45"/><rect x="5.5" y="4.7" width="3.6" height="14.6" rx="1.8"/><rect x="14.9" y="4.7" width="3.6" height="14.6" rx="1.8"/><circle cx="16.7" cy="20.8" r="1.45"/></g></svg>
+      <span>Кодекс<span class="logo-suffix"> Лотрика</span></span>
+    </a>
+    <!-- Главное меню. Текущий раздел помечен aria-current="page" — он подсвечивается -->
+    <nav id="site-nav" aria-label="Основное меню">
+      <a class="appear appear--scale" href="boss.html" style="--d:.16s">Боссы</a>
+      <a class="appear appear--soft" href="gun.html" style="--d:.28s">Оружие</a>
+      <a class="appear appear--scale" href="gear.html" style="--d:.40s">Экипировка</a>
+      <a class="appear appear--soft" href="magic.html" aria-current="page" style="--d:.52s">Магия</a>
+      <a class="appear appear--scale" href="class.html" style="--d:.60s">Классы</a>
+    </nav>
+    <!-- Кнопка справа (на телефоне скрыта) -->
+    <a class="btn btn-solid header-cta appear appear--scale" href="index.html" style="--d:.34s">На главную</a>
+    <!-- Бургер: открывает меню на телефоне -->
+    <button class="burger appear appear--scale" style="--d:.34s" aria-controls="site-nav" aria-expanded="false" aria-label="Открыть меню"><i></i><i></i><i></i></button>
+  </header>
+
+  <!-- ===================== ДВЕ КОЛОНКИ ===================== -->
+  <div class="layout">
+
+    <!-- ЛЕВАЯ КОЛОНКА: основной контент страницы -->
+    <main class="content">
+<!-- Хлебная крошка: возврат к родительскому разделу -->
+      <a class="badge crumb" href="magic.html">← Вся магия</a>
+      <h1>Чародейство</h1>
+      <p class="lead">Школа магии с самым разнообразным набором типов урона и эффектов. Сила заклинаний растёт от интеллекта.</p>
+<!-- Раздел «Как колдовать» -->
+      <section class="lore-section rv">
+        <h2>Как колдовать</h2>
+        <ul class="tactics-list">
+          <li>Нужен посох или другой катализатор в левой руке. Некоторые виды оружия тоже умеют колдовать: Immolation Tinder, Heysel Pick, Cleric's Candlestick, Golden Ritual Spear, Crystal Chime.</li>
+          <li>У костра выберите «настроить заклинания» и поместите заклинание в слот. Часть заклинаний занимает несколько слотов.</li>
+          <li>Число слотов зависит от учёности, затраты на каждое заклинание измеряются в очках концентрации (FP).</li>
+        </ul>
+      </section>
+<!-- Раздел «Все заклинания чародейства (38)» -->
+      <section class="lore-section rv">
+        <h2>Все заклинания чародейства (38)</h2>
+        <div class="table-wrap"><table class="data-table"><thead><tr><th>Заклинание</th><th class=num>FP</th><th class=num>Слоты</th><th class=num>Инт.</th><th class=num>Эффект</th></tr></thead>
+<tbody>
+<tr><td>Soul Arrow</td><td class=num>7</td><td class=num>1</td><td class=num>10</td><td class=num>Выпускает духовную стрелу.</td></tr>
+<tr><td>Great Soul Arrow</td><td class=num>10</td><td class=num>1</td><td class=num>15</td><td class=num>Более мощная духовная стрела.</td></tr>
+<tr><td>Heavy Soul Arrow</td><td class=num>11</td><td class=num>1</td><td class=num>13</td><td class=num>Тяжёлая духовная стрела.</td></tr>
+<tr><td>Great Heavy Soul Arrow</td><td class=num>14</td><td class=num>1</td><td class=num>18</td><td class=num>Более мощная тяжёлая стрела.</td></tr>
+<tr><td>Farron Dart</td><td class=num>3</td><td class=num>1</td><td class=num>8</td><td class=num>Выпускает дротик из души.</td></tr>
+<tr><td>Great Farron Dart</td><td class=num>4</td><td class=num>1</td><td class=num>23</td><td class=num>Усиленный дротик.</td></tr>
+<tr><td>Farron Hail</td><td class=num>4</td><td class=num>1</td><td class=num>28</td><td class=num>Каскад дротиков.</td></tr>
+<tr><td>Homing Soulmass</td><td class=num>20</td><td class=num>1</td><td class=num>20</td><td class=num>Самонаводящийся сгусток души.</td></tr>
+<tr><td>Homing Crystal Soulmass</td><td class=num>43</td><td class=num>1</td><td class=num>30</td><td class=num>Самонаводящийся кристальный сгусток; пробивает цель.</td></tr>
+<tr><td>Crystal Hail</td><td class=num>19</td><td class=num>1</td><td class=num>18</td><td class=num>Каскад кристальных сгустков сверху; пробивают цель.</td></tr>
+<tr><td>Soul Spear</td><td class=num>32</td><td class=num>1</td><td class=num>32</td><td class=num>Выпускает копьё из души.</td></tr>
+<tr><td>Crystal Soul Spear</td><td class=num>46</td><td class=num>1</td><td class=num>48</td><td class=num>Кристальное копьё; пробивает цель.</td></tr>
+<tr><td>White Dragon Breath</td><td class=num>25</td><td class=num>1</td><td class=num>50</td><td class=num>Кристальное дыхание Сиф Бесчешуйчатого.</td></tr>
+<tr><td>Soul Stream</td><td class=num>55</td><td class=num>2</td><td class=num>45</td><td class=num>Шквал душ.</td></tr>
+<tr><td>Soul Greatsword</td><td class=num>23</td><td class=num>1</td><td class=num>22</td><td class=num>Атака мечом, сотканным из душ.</td></tr>
+<tr><td>Farron Flashsword</td><td class=num>4</td><td class=num>1</td><td class=num>23</td><td class=num>Вариант Soul Greatsword от чародеев Фаррона.</td></tr>
+<tr><td>Magic Weapon</td><td class=num>25</td><td class=num>1</td><td class=num>10</td><td class=num>Усиливает оружие в правой руке магией.</td></tr>
+<tr><td>Great Magic Weapon</td><td class=num>35</td><td class=num>1</td><td class=num>15</td><td class=num>Сильнее усиливает оружие.</td></tr>
+<tr><td>Crystal Magic Weapon</td><td class=num>45</td><td class=num>1</td><td class=num>30</td><td class=num>Усиливает оружие кристаллом.</td></tr>
+<tr><td>Magic Shield</td><td class=num>30</td><td class=num>1</td><td class=num>10</td><td class=num>Усиливает щит в левой руке магией.</td></tr>
+<tr><td>Great Magic Shield</td><td class=num>60</td><td class=num>1</td><td class=num>18</td><td class=num>Сильнее усиливает щит.</td></tr>
+<tr><td>Spook</td><td class=num>15</td><td class=num>1</td><td class=num>10</td><td class=num>Глушит шум заклинателя и защищает от урона при падении.</td></tr>
+<tr><td>Aural Decoy</td><td class=num>15</td><td class=num>1</td><td class=num>18</td><td class=num>Отвлекает врагов далёким звуком.</td></tr>
+<tr><td>Pestilent Mercury</td><td class=num>13</td><td class=num>1</td><td class=num>30</td><td class=num>Ртутное облако разъедает здоровье; опасно и для самого заклинателя.</td></tr>
+<tr><td>Cast Light</td><td class=num>20</td><td class=num>1</td><td class=num>15</td><td class=num>Освещает окрестности.</td></tr>
+<tr><td>Repair</td><td class=num>20</td><td class=num>1</td><td class=num>15</td><td class=num>Чинит оружие и броню, даже сломанные.</td></tr>
+<tr><td>Hidden Weapon</td><td class=num>25</td><td class=num>1</td><td class=num>12</td><td class=num>Делает оружие в правой руке невидимым.</td></tr>
+<tr><td>Hidden Body</td><td class=num>15</td><td class=num>1</td><td class=num>15</td><td class=num>Делает тело почти невидимым.</td></tr>
+<tr><td>Chameleon</td><td class=num>20</td><td class=num>1</td><td class=num>12</td><td class=num>Превращает в неприметный предмет, зависящий от местности.</td></tr>
+<tr><td>Twisted Wall of Light</td><td class=num>10</td><td class=num>1</td><td class=num>27</td><td class=num>Искажает свет и отклоняет магию.</td></tr>
+<tr><td>Deep Soul</td><td class=num>6</td><td class=num>1</td><td class=num>12</td><td class=num>Выпускает тёмную взвесь души.</td></tr>
+<tr><td>Great Deep Soul</td><td class=num>9</td><td class=num>1</td><td class=num>20</td><td class=num>Усиленная тёмная взвесь.</td></tr>
+<tr><td>Dark Bead</td><td class=num>40</td><td class=num>1</td><td class=num>32</td><td class=num>Тёмное воплощение человечности (Карла, 15 000 душ).</td></tr>
+<tr><td>Dark Edge</td><td class=num>26</td><td class=num>1</td><td class=num>30</td><td class=num>Удар клинком из тьмы человечности (Карла, 8 000 душ).</td></tr>
+<tr><td>Frozen Weapon</td><td class=num>30</td><td class=num>1</td><td class=num>15</td><td class=num>Наделяет оружие в правой руке морозом.</td></tr>
+<tr><td>Snap Freeze</td><td class=num>16</td><td class=num>1</td><td class=num>18</td><td class=num>Облако почти замёрзшего тумана (Ashes of Ariandel).</td></tr>
+<tr><td>Great Soul Dregs</td><td class=num>30</td><td class=num>1</td><td class=num>40</td><td class=num>Мощные остатки души.</td></tr>
+<tr><td>Old Moonlight</td><td class=num>23</td><td class=num>—</td><td class=num>25</td><td class=num>Создаёт старый лунный меч и атакует.</td></tr>
+</tbody></table></div>
+      </section>
+<!-- Раздел «Свитки» -->
+      <section class="lore-section rv">
+        <h2>Свитки</h2>
+        <ul class="tactics-list">
+          <li><strong>Sage's Scroll</strong> (Орбек из Винхейма): Great Farron Dart и Farron Hail.</li>
+          <li><strong>Golden Scroll</strong>: Cast Light, Repair, Hidden Body, Hidden Weapon, Twisted Wall of Light.</li>
+          <li><strong>Logan's Scroll</strong>: Soul Spear и Homing Soulmass.</li>
+          <li><strong>Crystal Scroll</strong>: Homing Crystal Soulmass, Crystal Soul Spear, Crystal Magic Weapon.</li>
+        </ul>
+      </section>
+<!-- Раздел «Что усиливает чародейство» -->
+      <section class="lore-section rv">
+        <h2>Что усиливает чародейство</h2>
+        <div class="table-wrap"><table class="data-table"><thead><tr><th>Предмет</th><th>Тип</th><th>Эффект</th></tr></thead>
+<tbody>
+<tr><td>Crown of Dusk</td><td>шлем</td><td>около +10% к урону чародейства</td></tr>
+<tr><td>Young Dragon Ring</td><td>кольцо</td><td>+12% к урону чародейства</td></tr>
+<tr><td>Bellowing Dragoncrest Ring</td><td>кольцо</td><td>+20% к урону чародейства</td></tr>
+<tr><td>Magic Clutch Ring</td><td>кольцо</td><td>+15% к магической атаке</td></tr>
+<tr><td>Scholar Ring</td><td>кольцо</td><td>+5 к интеллекту</td></tr>
+<tr><td>Lingering Dragoncrest Ring</td><td>кольцо</td><td>эффект заклинаний длится на 30% дольше</td></tr>
+<tr><td>Scholar's Candlestick</td><td>кинжал</td><td>+12,5% к урону чародейства</td></tr>
+</tbody></table></div>
+      </section>
+    </main>
+
+    <!-- ПРАВАЯ КОЛОНКА: сайдбар. «Содержание» добавляет script.js автоматически -->
+    <aside class="sidebar">
+      <!-- Виджет «Связанные записи»: ссылки на соседние разделы -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Связанные записи</h3>
+        <div class="tag-group">
+          <a href="magic.html" class="tag-btn">Магия</a>
+          <a href="class.html" class="tag-btn">Классы</a>
+          <a href="gear.html" class="tag-btn">Экипировка</a>
+          <a href="lore.html" class="tag-btn">Лор</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===================== ПОДВАЛ ===================== -->
+  <div class="foot"><span>Кодекс Лотрика — фанатская вики по Dark Souls III</span><a href="#top">Наверх</a></div>
+</div>
+
+<!-- Общий скрипт: анимации, меню, оглавление, фильтры -->
+<script src="script.js" defer></script>
+</body>
+</html>

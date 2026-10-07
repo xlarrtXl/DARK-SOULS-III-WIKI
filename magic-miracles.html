@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- ======================= HEAD: служебная часть страницы ======================= -->
+<meta charset="UTF-8">
+<!-- viewport-fit=cover: контент заходит под «чёлку» телефона, отступы задаёт CSS -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Чудеса — Кодекс Лотрика</title>
+<meta name="description" content="Чудеса Dark Souls III: лечение, молнии, усиления. Список заклинаний и проверенные данные.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cg transform='rotate(-30 12 12)'%3E%3Ccircle cx='7.3' cy='3.2' r='1.45'/%3E%3Crect x='5.5' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Crect x='14.9' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Ccircle cx='16.7' cy='20.8' r='1.45'/%3E%3C/g%3E%3C/svg%3E">
+<!-- Шрифты: Inter — весь интерфейс и текст, Instrument Serif — курсивные акценты -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&family=Instrument+Serif:ital@1&display=swap">
+<!-- Единый файл стилей для всего сайта (внутри подробные комментарии по разделам) -->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<!-- no-js: пока скрипт не отработал, всё видно сразу; script.js уберёт этот класс -->
+<body style="background:#000;color:#fff" class="no-js">
+
+<!-- СЛОЙ 1: плёночное зерно поверх всей страницы (чисто декор, клики не мешает) -->
+<div class="grain"></div>
+<!-- СЛОЙ 2: мягкое свечение сверху за контентом -->
+<div class="bg-glow"></div>
+
+<!-- СЛОЙ 3: весь видимый контент страницы -->
+<div class="page" id="top">
+
+  <!-- Затемнение под мобильным меню (виден только на телефоне, когда меню открыто) -->
+  <div class="menu-backdrop"></div>
+
+  <!-- ===================== ШАПКА ===================== -->
+  <header class="header">
+    <!-- Логотип: клик ведёт на главную -->
+    <a class="logo appear appear--scale" href="index.html" aria-label="Кодекс Лотрика — на главную" style="--d:.08s">
+      <svg viewBox="0 0 24 24" fill="currentColor"><g transform="rotate(-30 12 12)"><circle cx="7.3" cy="3.2" r="1.45"/><rect x="5.5" y="4.7" width="3.6" height="14.6" rx="1.8"/><rect x="14.9" y="4.7" width="3.6" height="14.6" rx="1.8"/><circle cx="16.7" cy="20.8" r="1.45"/></g></svg>
+      <span>Кодекс<span class="logo-suffix"> Лотрика</span></span>
+    </a>
+    <!-- Главное меню. Текущий раздел помечен aria-current="page" — он подсвечивается -->
+    <nav id="site-nav" aria-label="Основное меню">
+      <a class="appear appear--scale" href="boss.html" style="--d:.16s">Боссы</a>
+      <a class="appear appear--soft" href="gun.html" style="--d:.28s">Оружие</a>
+      <a class="appear appear--scale" href="gear.html" style="--d:.40s">Экипировка</a>
+      <a class="appear appear--soft" href="magic.html" aria-current="page" style="--d:.52s">Магия</a>
+      <a class="appear appear--scale" href="class.html" style="--d:.60s">Классы</a>
+    </nav>
+    <!-- Кнопка справа (на телефоне скрыта) -->
+    <a class="btn btn-solid header-cta appear appear--scale" href="index.html" style="--d:.34s">На главную</a>
+    <!-- Бургер: открывает меню на телефоне -->
+    <button class="burger appear appear--scale" style="--d:.34s" aria-controls="site-nav" aria-expanded="false" aria-label="Открыть меню"><i></i><i></i><i></i></button>
+  </header>
+
+  <!-- ===================== ДВЕ КОЛОНКИ ===================== -->
+  <div class="layout">
+
+    <!-- ЛЕВАЯ КОЛОНКА: основной контент страницы -->
+    <main class="content">
+<!-- Хлебная крошка: возврат к родительскому разделу -->
+      <a class="badge crumb" href="magic.html">← Вся магия</a>
+      <h1>Чудеса</h1>
+      <p class="lead">Школа магии веры: исцеление, молнии и усиления. Сила заклинаний растёт от веры.</p>
+<!-- Раздел «Как творить чудеса» -->
+      <section class="lore-section rv">
+        <h2>Как творить чудеса</h2>
+        <ul class="tactics-list">
+          <li>Нужен талисман или колокольчик (chime) в левой руке, либо особое оружие, способное творить чудеса.</li>
+          <li>Заклинания настраиваются у костра, как и другая магия.</li>
+          <li>Обычные чудеса зависят от веры. Тёмные чудеса, сотворённые тёмным катализатором, зависят от веры и интеллекта, причём вера важнее.</li>
+        </ul>
+      </section>
+<!-- Раздел «Все чудеса (38)» -->
+      <section class="lore-section rv">
+        <h2>Все чудеса (38)</h2>
+        <p>Названия даны в оригинале, как в игре. Подробно описаны те чудеса, о которых нашлись проверенные данные.</p>
+        <ul class="chip-list">
+          <li>Atonement</li>
+          <li>Blessed Weapon</li>
+          <li>Bountiful Light</li>
+          <li>Bountiful Sunlight</li>
+          <li>Caressing Tears</li>
+          <li>Dark Blade</li>
+          <li>Darkmoon Blade</li>
+          <li>Dead Again</li>
+          <li>Deep Protection</li>
+          <li>Divine Pillars of Light</li>
+          <li>Dorhys' Gnawing</li>
+          <li>Emit Force</li>
+          <li>Force</li>
+          <li>Gnaw</li>
+          <li>Great Heal</li>
+          <li>Great Lightning Spear</li>
+          <li>Great Magic Barrier</li>
+          <li>Heal</li>
+          <li>Heal Aid</li>
+          <li>Homeward</li>
+          <li>Lifehunt Scythe</li>
+          <li>Lightning Arrow</li>
+          <li>Lightning Blade</li>
+          <li>Lightning Spear</li>
+          <li>Lightning Stake</li>
+          <li>Lightning Storm</li>
+          <li>Magic Barrier</li>
+          <li>Med Heal</li>
+          <li>Projected Heal</li>
+          <li>Replenishment</li>
+          <li>Sacred Oath</li>
+          <li>Seek Guidance</li>
+          <li>Soothing Sunlight</li>
+          <li>Sunlight Spear</li>
+          <li>Tears of Denial</li>
+          <li>Vow of Silence</li>
+          <li>Way of White Corona</li>
+          <li>Wrath of the Gods</li>
+        </ul>
+      </section>
+<!-- Раздел «Проверенные данные» -->
+      <section class="lore-section rv">
+        <h2>Проверенные данные</h2>
+        <div class="table-wrap"><table class="data-table"><thead><tr><th>Чудо</th><th class=num>FP</th><th class=num>Слоты</th><th class=num>Вера</th><th class=num>Эффект</th></tr></thead>
+<tbody>
+<tr><td>Caressing Tears</td><td class=num>14</td><td class=num>1</td><td class=num>12</td><td class=num>Лечит кровотечение, отравление и мороз у вас и союзников рядом (учит Морн, апостол Архиепископа).</td></tr>
+<tr><td>Replenishment</td><td class=num>—</td><td class=num>—</td><td class=num>15</td><td class=num>Постепенно восстанавливает здоровье.</td></tr>
+<tr><td>Bountiful Light</td><td class=num>—</td><td class=num>—</td><td class=num>25</td><td class=num>Мощнее Replenishment, но дороже; не зависит от усиления заклинаний.</td></tr>
+<tr><td>Blessed Weapon</td><td class=num>35</td><td class=num>—</td><td class=num>15</td><td class=num>Пока действует, вы медленно восстанавливаете здоровье.</td></tr>
+<tr><td>Emit Force</td><td class=num>20</td><td class=num>1</td><td class=num>18</td><td class=num>Сбивает с ног на расстоянии; хорош против тяжёлой брони.</td></tr>
+<tr><td>Dark Blade</td><td class=num>35</td><td class=num>1</td><td class=num>25</td><td class=num>Наделяет оружие тьмой. Продают Ирина из Карима и Карла по 10 000 душ после Londor Braille Divine Tome.</td></tr>
+<tr><td>Great Lightning Spear</td><td class=num>32</td><td class=num>1</td><td class=num>30</td><td class=num>Метает огромное копьё молнии.</td></tr>
+<tr><td>Dead Again</td><td class=num>—</td><td class=num>1</td><td class=num>23 (+15 инт.)</td><td class=num>Тёмное чудо: творится на землю перед собой; зависит от веры и интеллекта. Пришло из Dark Souls II.</td></tr>
+</tbody></table></div>
+      </section>
+<!-- Раздел «Талисман белых волос» -->
+      <section class="lore-section rv">
+        <h2>Талисман белых волос</h2>
+        <p>White Hair Talisman — катализатор и для чудес, и для пиромантии. Он лежит за иллюзорной стеной в Smouldering Lake и даёт навык Combustion — огонь в руке. Он растёт и от веры, и от интеллекта.</p>
+      </section>
+    </main>
+
+    <!-- ПРАВАЯ КОЛОНКА: сайдбар. «Содержание» добавляет script.js автоматически -->
+    <aside class="sidebar">
+      <!-- Виджет «Связанные записи»: ссылки на соседние разделы -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Связанные записи</h3>
+        <div class="tag-group">
+          <a href="magic.html" class="tag-btn">Магия</a>
+          <a href="class.html" class="tag-btn">Классы</a>
+          <a href="gear.html" class="tag-btn">Экипировка</a>
+          <a href="lore.html" class="tag-btn">Лор</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===================== ПОДВАЛ ===================== -->
+  <div class="foot"><span>Кодекс Лотрика — фанатская вики по Dark Souls III</span><a href="#top">Наверх</a></div>
+</div>
+
+<!-- Общий скрипт: анимации, меню, оглавление, фильтры -->
+<script src="script.js" defer></script>
+</body>
+</html>

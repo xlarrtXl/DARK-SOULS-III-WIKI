@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- HEAD: служебная часть. Шрифты Inter (весь текст) и Instrument Serif (курсивные акценты), затем style.css -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Кодекс Лотрика — Dark Souls III Вики</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cg transform='rotate(-30 12 12)'%3E%3Ccircle cx='7.3' cy='3.2' r='1.45'/%3E%3Crect x='5.5' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Crect x='14.9' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Ccircle cx='16.7' cy='20.8' r='1.45'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&family=Instrument+Serif:ital@1&display=swap">
+<!-- Единый файл стилей для всего сайта (внутри подробные комментарии по разделам) -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body style="background:#000;color:#fff" class="no-js">
+<!-- СЛОЙ 1: плёночное зерно поверх всей страницы (декор) -->
+<div class="grain"></div>
+<!-- СЛОЙ 2: видео-фон первого экрана. Источник — атрибут src у <video>; затемнение рисует CSS (.hero-photo::after) -->
+<div class="hero-photo appear appear--soft" style="--d:0s">
+  <video autoplay muted loop playsinline preload="auto" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260818_072341_50851634-bbc3-4c33-9acc-7647d4db44aa.mp4"></video>
+</div>
+
+<!-- СЛОЙ 3: весь видимый контент главной -->
+<div class="page">
+<div class="menu-backdrop"></div>
+<!-- ПЕРВЫЙ ЭКРАН: шапка → hero → статистика тремя рядами на высоту окна -->
+<div class="first">
+  <!-- ШАПКА: логотип слева, меню по центру, кнопка справа, бургер на телефоне -->
+<header class="header">
+    <a class="logo appear appear--scale" href="#top" aria-label="Кодекс Лотрика" style="--d:.08s">
+      <svg viewBox="0 0 24 24" fill="currentColor"><g transform="rotate(-30 12 12)"><circle cx="7.3" cy="3.2" r="1.45"/><rect x="5.5" y="4.7" width="3.6" height="14.6" rx="1.8"/><rect x="14.9" y="4.7" width="3.6" height="14.6" rx="1.8"/><circle cx="16.7" cy="20.8" r="1.45"/></g></svg>
+      <span>Кодекс<span class="logo-suffix"> Лотрика</span></span>
+    </a>
+    <!-- ГЛАВНОЕ МЕНЮ: «таблетки» из жидкого металла. Ссылки на разделы сайта -->
+<nav id="site-nav" aria-label="Основное меню">
+      <a class="appear appear--scale" href="boss.html" style="--d:.16s">Боссы</a>
+      <a class="appear appear--soft" href="gun.html" style="--d:.28s">Оружие</a>
+      <a class="appear appear--scale" href="gear.html" style="--d:.40s">Экипировка</a>
+      <a class="appear appear--soft" href="magic.html" style="--d:.52s">Магия</a>
+      <a class="appear appear--scale" href="class.html" style="--d:.60s">Классы</a>
+    </nav>
+    <a class="btn btn-solid header-cta appear appear--scale" href="#sysreq" style="--d:.34s">Системные требования</a>
+    <button class="burger appear appear--scale" style="--d:.34s" aria-controls="site-nav" aria-expanded="false" aria-label="Открыть меню"><i></i><i></i><i></i></button>
+  </header>
+
+  <!-- HERO: бейдж, заголовок в две строки, подзаголовок и две кнопки -->
+<main class="hero" id="top">
+    <div class="hero-copy">
+      <div class="badge appear appear--pop" style="--d:.22s">
+        <svg class="badge-star" viewBox="0 0 24 24"><path d="M12 2.6C12.55 2.6 12.88 3.15 13.08 4.7c.62 4.7 1.52 5.6 6.22 6.22 1.55.2 2.1.53 2.1 1.08s-.55.88-2.1 1.08c-4.7.62-5.6 1.52-6.22 6.22-.2 1.55-.53 2.1-1.08 2.1s-.88-.55-1.08-2.1c-.62-4.7-1.52-5.6-6.22-6.22C3.15 12.88 2.6 12.55 2.6 12s.55-.88 2.1-1.08c4.7-.62 5.6-1.52 6.22-6.22C11.12 3.15 11.45 2.6 12 2.6Z"/></svg>
+        Dark Souls III · Вики
+      </div>
+      <h1>
+        <span class="headline-line appear appear--mask" style="--d:.42s">Свод знаний об <em>угасающем</em></span>
+        <span class="headline-line appear appear--mask" style="--d:.62s">мире Лотрика.</span>
+      </h1>
+      <p class="lede appear appear--soft" style="--d:.82s;animation-duration:1.25s">Исследуйте лор, встречи с боссами, священные локации и артефакты уходящей эпохи.</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid appear appear--btn" href="lore.html" style="--d:.96s">Прочитать лор</a>
+        <a class="btn btn-ghost appear appear--side" href="#bosses" style="--d:1.10s">Смотреть боссов</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- СТАТИСТИКА: три факта внизу первого экрана (иконки — inline SVG) -->
+<footer class="stats">
+    <div class="stat appear appear--stat" style="--d:1.12s">
+      <svg viewBox="0 0 24 24"><defs><linearGradient id="g1" x1="3" y1="2" x2="14" y2="22" gradientUnits="userSpaceOnUse"><stop offset=".38" stop-color="#fff"/><stop offset=".62" stop-color="#3a3a3a"/></linearGradient><linearGradient id="g2" x1="3" y1="2" x2="14" y2="22" gradientUnits="userSpaceOnUse"><stop offset=".38" stop-color="#3a3a3a"/><stop offset=".62" stop-color="#fff"/></linearGradient></defs><rect x="3.4" y="2.6" width="7.2" height="18.8" rx="3.6" fill="url(#g1)"/><rect x="13.4" y="2.6" width="7.2" height="18.8" rx="3.6" fill="url(#g2)"/><rect x="9.2" y="10.9" width="5.6" height="2.2" rx="1.1" fill="#4a4a4a"/></svg>
+      25 боссов: 19 в кампании и 6 в DLC
+    </div>
+    <div class="stat appear appear--stat" style="--d:1.28s">
+      <svg viewBox="0 0 24 24"><rect x="2.4" y="2.4" width="19.2" height="19.2" rx="6.2" fill="#fff"/><path d="M12 7.1v7.4M8.15 12.35L12 16.2l3.85-3.85" stroke="#111" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      25 ГБ на диске для установки
+    </div>
+    <div class="stat appear appear--stat" style="--d:1.44s">
+      <svg class="wide" viewBox="0 0 40 22"><circle cx="10.2" cy="11" r="9.2" fill="#2b2b2b"/><ellipse cx="10.2" cy="12.1" rx="4.15" ry="3.7" fill="#f4f4f4"/><path d="M4.6 5.4l1.2 3.2-3-.4zM15.8 5.4l-1.2 3.2 3-.4z" fill="#2b2b2b"/><circle cx="8.8" cy="11.4" r=".7" fill="#1a1a1a"/><circle cx="11.6" cy="11.4" r=".7" fill="#1a1a1a"/><circle cx="20.2" cy="11" r="9.2" fill="#fff"/><circle cx="17.4" cy="9.6" r="1.7" fill="#000"/><circle cx="23" cy="9.6" r="1.7" fill="#000"/><ellipse cx="20.2" cy="12.4" rx="1.2" ry=".9" fill="#111"/><path d="M16.8 14.6q3.4 3 6.8 0" stroke="#111" stroke-width="1.2" fill="none" stroke-linecap="round"/><circle cx="30.2" cy="11" r="9.2" fill="#f26b1d"/><text x="30.2" y="15.1" font-family="Inter,sans-serif" font-weight="700" font-size="12.5" text-anchor="middle" fill="#fff">e</text></svg>
+      Классы на любой стиль игры
+    </div>
+  </footer>
+</div>
+
+<!-- СЕКЦИЯ «Боссы»: заголовок-ссылка на boss.html + три карточки. Карточка = <article class="card rv"> -->
+<section class="sec" id="bosses">
+  <div class="sec-head rv"><h2><a href="boss.html">Боссы</a></h2>
+  <p>Ключевые противники, каждый из которых задаёт свой ритм боя и раскрывает часть лора мира. Всего в игре 25 боссов: 19 — в основной кампании, 6 — в DLC.</p></div>
+  <div class="grid">
+    <article class="card rv" style="--rd:0s"><h3><span>I</span>Судия Гундир</h3><p>Будучи чемпионом, Гундир слишком поздно прибыл в Храм Огня и обнаружил его без пламени и с неисправным колоколом. Гундир был повержен неизвестным воином, а затем стал ножнами для витого меча в надежде, что Первое Пламя когда-нибудь будет зажжено вновь.</p></article>
+    <article class="card rv" style="--rd:.1s"><h3><span>II</span>Вордт</h3><p>Вордт служил рыцарем-легионером на внешних границах и держался недалеко от стремительной танцовщицы.</p></article>
+    <article class="card rv" style="--rd:.2s"><h3><span>III</span>Знаток кристальных чар</h3><p>Давным-давно один из знатоков заключил договор с Легионами нежити и стал обучать чародеев Фаррона.</p></article>
+  </div>
+</section>
+
+<!-- СЕКЦИЯ «Классы» (подробнее — class.html) -->
+<section class="sec" id="classes">
+  <div class="sec-head rv"><h2><a href="class.html">Классы</a></h2>
+  <p>Десять стартовых классов. Выбор задаёт только стартовые параметры и снаряжение: позже любого персонажа можно развить в любую сторону.</p></div>
+  <div class="grid">
+    <a class="card rv" href="class-knight.html" style="--rd:0.0s"><h3><span>I</span>Рыцарь</h3><p>Классический «танк» с высокой жизненной силой, прочной броней и щитом. Хороший выбор для новичка.</p><span class="card-more">Подробнее →</span></a>
+    <a class="card rv" href="class-warrior.html" style="--rd:0.1s"><h3><span>II</span>Воин</h3><p>Потомок северных воинов: большая сила, боевой топор и хорошая живучесть.</p><span class="card-more">Подробнее →</span></a>
+    <a class="card rv" href="class-mercenary.html" style="--rd:0.2s"><h3><span>III</span>Наёмник</h3><p>Ловкий ветеран с парными клинками, которому легко уходить от ударов.</p><span class="card-more">Подробнее →</span></a>
+  </div>
+</section>
+
+<!-- СЕКЦИЯ «Экипировка» (подробнее — gear.html) -->
+<section class="sec" id="gear">
+  <div class="sec-head rv"><h2><a href="gear.html">Экипировка</a></h2>
+  <p>Броня, щиты, кольца и улучшение: всё, что помогает выжить в Лордране.</p></div>
+  <div class="grid">
+    <a class="card rv" href="gear-armor.html" style="--rd:0.0s"><h3><span>I</span>Броня</h3><p>Защищает от урона и недугов. В Dark Souls III броню нельзя улучшать, поэтому выбирайте комплект сразу.</p><span class="card-more">Подробнее →</span></a>
+    <a class="card rv" href="gear-upgrades.html" style="--rd:0.1s"><h3><span>II</span>Оружие и улучшение</h3><p>У кузнеца Андре оружие улучшается титанитом, а камни меняют тип урона и скалирование.</p><span class="card-more">Подробнее →</span></a>
+    <a class="card rv" href="gear-shields.html" style="--rd:0.2s"><h3><span>III</span>Щиты</h3><p>Блокируют и парируют атаки. Щиты улучшают и модифицируют так же, как оружие.</p><span class="card-more">Подробнее →</span></a>
+  </div>
+</section>
+
+<!-- СЕКЦИЯ «Оружие» (подробнее — gun.html) -->
+<section class="sec" id="weapons">
+  <div class="sec-head rv"><h2><a href="gun.html">Оружие</a></h2>
+  <p>Огромный выбор оружия под любой стиль игры: от быстрых кинжалов до тяжёлых двуручников.</p></div>
+  <div class="grid">
+    <a class="card rv" href="gun-dagger.html" style="--rd:0.0s"><h3><span>I</span>Кинжалы</h3><p>Быстрые, с высоким критическим потенциалом, но с небольшой дальностью.</p><span class="card-more">Подробнее →</span></a>
+    <a class="card rv" href="gun-straight.html" style="--rd:0.1s"><h3><span>II</span>Прямые мечи</h3><p>Баланс режущих и колющих атак.</p><span class="card-more">Подробнее →</span></a>
+    <a class="card rv" href="gun-katana.html" style="--rd:0.2s"><h3><span>III</span>Катаны</h3><p>Промежуточные по скорости и дальности, хорошо показывают себя в контратаках.</p><span class="card-more">Подробнее →</span></a>
+  </div>
+</section>
+
+<!-- СЕКЦИЯ «Магия» (подробнее — magic.html) -->
+<section class="sec" id="magic">
+  <div class="sec-head rv"><h2><a href="magic.html">Магия</a></h2>
+  <p>Три школы заклинаний. Для каждой нужен свой фокусировщик и своя характеристика.</p></div>
+  <div class="grid">
+    <a class="card rv" href="magic-sorcery.html" style="--rd:0.0s"><h3><span>I</span>Чародейство</h3><p>Опирается на интеллект. Посохи и катализаторы, 38 заклинаний.</p><span class="card-more">Подробнее →</span></a>
+    <a class="card rv" href="magic-miracles.html" style="--rd:0.1s"><h3><span>II</span>Чудеса</h3><p>Опираются на веру. Талисманы и колокольчики; лечение и молнии.</p><span class="card-more">Подробнее →</span></a>
+    <a class="card rv" href="magic-pyromancy.html" style="--rd:0.2s"><h3><span>III</span>Пиромантия</h3><p>Огонь, зависящий от интеллекта и веры; пламя пироманта.</p><span class="card-more">Подробнее →</span></a>
+  </div>
+</section>
+
+<!-- СЕКЦИЯ «Системные требования»: две широкие карточки (.card.wide) со списками -->
+<section class="sec" id="sysreq">
+  <div class="sec-head rv"><h2>Системные <em>требования</em></h2>
+  <p>Минимальные и рекомендуемые параметры компьютера для запуска игры.</p></div>
+  <div class="grid two">
+    <article class="card wide rv" style="--rd:0s"><h3>Минимальные</h3><ul>
+      <li>ОС: Windows 7 SP1 64-bit, Windows 8.1 64-bit или Windows 10 64-bit</li>
+      <li>Процессор: Intel Core i3-2100 (3,1 ГГц) или AMD FX-6300 (3,5 ГГц)</li>
+      <li>Оперативная память: 4 ГБ</li>
+      <li>Видеокарта: NVIDIA GeForce GTX 750 Ti или ATI Radeon HD 7950 (2 ГБ)</li>
+      <li>DirectX: версия 11</li>
+      <li>Звуковая карта: совместимая с DirectX 11</li>
+      <li>Место на диске: 25 ГБ</li>
+      <li>Сеть: широкополосное подключение (для активации и онлайн-функций)</li>
+      <li>Дополнительно: клавиатура и мышь</li></ul></article>
+    <article class="card wide rv" style="--rd:.12s"><h3>Рекомендуемые</h3><ul>
+      <li>ОС: Windows 7 SP1 64-bit, Windows 8.1 64-bit или Windows 10 64-bit</li>
+      <li>Процессор: Intel Core i7-3770 (3,4 ГГц) или AMD FX-8350 (4 ГГц)</li>
+      <li>Оперативная память: 8 ГБ</li>
+      <li>Видеокарта: NVIDIA GeForce GTX 970 или ATI Radeon R9 (4 ГБ)</li>
+      <li>DirectX: версия 11</li>
+      <li>Звуковая карта: совместимая с DirectX 11</li>
+      <li>Место на диске: 25 ГБ</li>
+      <li>Сеть: широкополосное подключение</li>
+      <li>Дополнительно: клавиатура и мышь</li></ul></article>
+  </div>
+</section>
+
+<!-- ПОДВАЛ -->
+<div class="foot"><span>Кодекс Лотрика — фанатская вики по Dark Souls III</span><a href="#top">Наверх</a></div>
+</div>
+
+<!-- Общий скрипт: анимации, меню, шапка, оглавление, фильтры -->
+<script src="script.js" defer></script>
+</body>
+</html>

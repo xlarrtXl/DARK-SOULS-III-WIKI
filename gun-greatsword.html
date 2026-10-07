@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- ======================= HEAD: служебная часть страницы ======================= -->
+<meta charset="UTF-8">
+<!-- viewport-fit=cover: контент заходит под «чёлку» телефона, отступы задаёт CSS -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Двуручные мечи (Greatswords) — Кодекс Лотрика</title>
+<meta name="description" content="Тяжёлые мечи с большей дальностью и уроном, чем у прямых, но более медленные. Особенности и примеры в Dark Souls III.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cg transform='rotate(-30 12 12)'%3E%3Ccircle cx='7.3' cy='3.2' r='1.45'/%3E%3Crect x='5.5' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Crect x='14.9' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Ccircle cx='16.7' cy='20.8' r='1.45'/%3E%3C/g%3E%3C/svg%3E">
+<!-- Шрифты: Inter — весь интерфейс и текст, Instrument Serif — курсивные акценты -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&family=Instrument+Serif:ital@1&display=swap">
+<!-- Единый файл стилей для всего сайта (внутри подробные комментарии по разделам) -->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<!-- no-js: пока скрипт не отработал, всё видно сразу; script.js уберёт этот класс -->
+<body style="background:#000;color:#fff" class="no-js">
+
+<!-- СЛОЙ 1: плёночное зерно поверх всей страницы (чисто декор, клики не мешает) -->
+<div class="grain"></div>
+<!-- СЛОЙ 2: мягкое свечение сверху за контентом -->
+<div class="bg-glow"></div>
+
+<!-- СЛОЙ 3: весь видимый контент страницы -->
+<div class="page" id="top">
+
+  <!-- Затемнение под мобильным меню (виден только на телефоне, когда меню открыто) -->
+  <div class="menu-backdrop"></div>
+
+  <!-- ===================== ШАПКА ===================== -->
+  <header class="header">
+    <!-- Логотип: клик ведёт на главную -->
+    <a class="logo appear appear--scale" href="index.html" aria-label="Кодекс Лотрика — на главную" style="--d:.08s">
+      <svg viewBox="0 0 24 24" fill="currentColor"><g transform="rotate(-30 12 12)"><circle cx="7.3" cy="3.2" r="1.45"/><rect x="5.5" y="4.7" width="3.6" height="14.6" rx="1.8"/><rect x="14.9" y="4.7" width="3.6" height="14.6" rx="1.8"/><circle cx="16.7" cy="20.8" r="1.45"/></g></svg>
+      <span>Кодекс<span class="logo-suffix"> Лотрика</span></span>
+    </a>
+    <!-- Главное меню. Текущий раздел помечен aria-current="page" — он подсвечивается -->
+    <nav id="site-nav" aria-label="Основное меню">
+      <a class="appear appear--scale" href="boss.html" style="--d:.16s">Боссы</a>
+      <a class="appear appear--soft" href="gun.html" aria-current="page" style="--d:.28s">Оружие</a>
+      <a class="appear appear--scale" href="gear.html" style="--d:.40s">Экипировка</a>
+      <a class="appear appear--soft" href="magic.html" style="--d:.52s">Магия</a>
+      <a class="appear appear--scale" href="class.html" style="--d:.60s">Классы</a>
+    </nav>
+    <!-- Кнопка справа (на телефоне скрыта) -->
+    <a class="btn btn-solid header-cta appear appear--scale" href="index.html" style="--d:.34s">На главную</a>
+    <!-- Бургер: открывает меню на телефоне -->
+    <button class="burger appear appear--scale" style="--d:.34s" aria-controls="site-nav" aria-expanded="false" aria-label="Открыть меню"><i></i><i></i><i></i></button>
+  </header>
+
+  <!-- ===================== ДВЕ КОЛОНКИ ===================== -->
+  <div class="layout">
+
+    <!-- ЛЕВАЯ КОЛОНКА: основной контент страницы -->
+    <main class="content">
+<!-- Хлебная крошка: возврат к родительскому разделу -->
+      <a class="badge crumb" href="gun.html">← Всё оружие</a>
+      <h1>Двуручные мечи</h1>
+      <p class="lead">Greatswords · Тяжёлые мечи с большей дальностью и уроном, чем у прямых, но более медленные.</p>
+<!-- Раздел «Особенности» -->
+      <section class="lore-section rv">
+        <h2>Особенности</h2>
+        <ul class="tactics-list">
+          <li>Урон и дальность выше, чем у прямых мечей.</li>
+        </ul>
+      </section>
+<!-- Раздел «Примеры оружия» -->
+      <section class="lore-section rv">
+        <h2>Примеры оружия</h2>
+        <p>Названия даны в оригинале, как в игре.</p>
+        <ul class="chip-list">
+          <li>Claymore</li>
+          <li>Moonlight Greatsword</li>
+          <li>Farron Greatsword</li>
+          <li>Black Knight Sword</li>
+        </ul>
+      </section>
+<!-- Раздел «Улучшение» -->
+      <section class="lore-section rv">
+        <h2>Улучшение</h2>
+        <p>Оружие улучшают у кузнеца Андре титанитом, а затем при желании модифицируют камнями (кроме луков, арбалетов и катализаторов). Подробности в разделе <a href="gear-upgrades.html">Улучшение и модификации</a>.</p>
+      </section>
+    </main>
+
+    <!-- ПРАВАЯ КОЛОНКА: сайдбар. «Содержание» добавляет script.js автоматически -->
+    <aside class="sidebar">
+      <!-- Виджет «Связанные записи»: ссылки на соседние разделы -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Связанные записи</h3>
+        <div class="tag-group">
+          <a href="gun.html" class="tag-btn">Оружие</a>
+          <a href="gear-upgrades.html" class="tag-btn">Улучшение</a>
+          <a href="class.html" class="tag-btn">Классы</a>
+          <a href="gear.html" class="tag-btn">Экипировка</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===================== ПОДВАЛ ===================== -->
+  <div class="foot"><span>Кодекс Лотрика — фанатская вики по Dark Souls III</span><a href="#top">Наверх</a></div>
+</div>
+
+<!-- Общий скрипт: анимации, меню, оглавление, фильтры -->
+<script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- ======================= HEAD: служебная часть страницы ======================= -->
+<meta charset="UTF-8">
+<!-- viewport-fit=cover: контент заходит под «чёлку» телефона, отступы задаёт CSS -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Боссы — Кодекс Лотрика</title>
+<meta name="description" content="Все боссы Dark Souls III: обязательные, опциональные и из DLC.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cg transform='rotate(-30 12 12)'%3E%3Ccircle cx='7.3' cy='3.2' r='1.45'/%3E%3Crect x='5.5' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Crect x='14.9' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Ccircle cx='16.7' cy='20.8' r='1.45'/%3E%3C/g%3E%3C/svg%3E">
+<!-- Шрифты: Inter — весь интерфейс и текст, Instrument Serif — курсивные акценты -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&family=Instrument+Serif:ital@1&display=swap">
+<!-- Единый файл стилей для всего сайта (внутри подробные комментарии по разделам) -->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<!-- no-js: пока скрипт не отработал, всё видно сразу; script.js уберёт этот класс -->
+<body style="background:#000;color:#fff" class="no-js">
+
+<!-- СЛОЙ 1: плёночное зерно поверх всей страницы (чисто декор, клики не мешает) -->
+<div class="grain"></div>
+<!-- СЛОЙ 2: мягкое свечение сверху за контентом -->
+<div class="bg-glow"></div>
+
+<!-- СЛОЙ 3: весь видимый контент страницы -->
+<div class="page" id="top">
+
+  <!-- Затемнение под мобильным меню (виден только на телефоне, когда меню открыто) -->
+  <div class="menu-backdrop"></div>
+
+  <!-- ===================== ШАПКА ===================== -->
+  <header class="header">
+    <!-- Логотип: клик ведёт на главную -->
+    <a class="logo appear appear--scale" href="index.html" aria-label="Кодекс Лотрика — на главную" style="--d:.08s">
+      <svg viewBox="0 0 24 24" fill="currentColor"><g transform="rotate(-30 12 12)"><circle cx="7.3" cy="3.2" r="1.45"/><rect x="5.5" y="4.7" width="3.6" height="14.6" rx="1.8"/><rect x="14.9" y="4.7" width="3.6" height="14.6" rx="1.8"/><circle cx="16.7" cy="20.8" r="1.45"/></g></svg>
+      <span>Кодекс<span class="logo-suffix"> Лотрика</span></span>
+    </a>
+    <!-- Главное меню. Текущий раздел помечен aria-current="page" — он подсвечивается -->
+    <nav id="site-nav" aria-label="Основное меню">
+      <a class="appear appear--scale" href="boss.html" aria-current="page" style="--d:.16s">Боссы</a>
+      <a class="appear appear--soft" href="gun.html" style="--d:.28s">Оружие</a>
+      <a class="appear appear--scale" href="gear.html" style="--d:.40s">Экипировка</a>
+      <a class="appear appear--soft" href="magic.html" style="--d:.52s">Магия</a>
+      <a class="appear appear--scale" href="class.html" style="--d:.60s">Классы</a>
+    </nav>
+    <!-- Кнопка справа (на телефоне скрыта) -->
+    <a class="btn btn-solid header-cta appear appear--scale" href="index.html" style="--d:.34s">На главную</a>
+    <!-- Бургер: открывает меню на телефоне -->
+    <button class="burger appear appear--scale" style="--d:.34s" aria-controls="site-nav" aria-expanded="false" aria-label="Открыть меню"><i></i><i></i><i></i></button>
+  </header>
+
+  <!-- ===================== ДВЕ КОЛОНКИ ===================== -->
+  <div class="layout">
+
+    <!-- ЛЕВАЯ КОЛОНКА: основной контент страницы -->
+    <main class="content">
+<!-- Хлебная крошка -->
+      <a class="badge crumb" href="index.html">← На главную</a>
+      <!-- Заголовок и вводный текст страницы -->
+      <h1>Боссы</h1>
+      <p class="lead">Ключевые противники, каждый из которых задаёт свой ритм боя и раскрывает часть лора мира. Всего в игре 25 боссов: 19 — в основной кампании, 6 — в DLC.</p>
+
+      <!-- Фильтры: кнопка data-filter ↔ карточка data-rank (логика в script.js, блок 7) -->
+      <div class="filters" role="group" aria-label="Фильтр боссов">
+        <button class="filter-btn is-active" data-filter="all">Все (25)</button>
+        <button class="filter-btn" data-filter="req">Обязательные (14)</button>
+        <button class="filter-btn" data-filter="opt">Опциональные (4)</button>
+        <button class="filter-btn" data-filter="dlc">DLC (7)</button>
+      </div>
+
+      <!-- Сетка карточек боссов. Новый босс = копия <a class="boss-card ..."> с новой ссылкой.
+           rank-req / rank-opt / rank-dlc задают цвет метки и участие в фильтре -->
+      <div class="boss-grid">
+        <a href="boss-gundir.html" class="boss-card rank-req" data-rank="req">
+          <span class="card-rank">Обязательный</span>
+          <h3 class="card-name">Судия Гундир</h3>
+        </a>
+        <a href="boss-vordt.html" class="boss-card rank-req" data-rank="req">
+          <span class="card-rank">Обязательный</span>
+          <h3 class="card-name">Вордт из Холодной долины</h3>
+        </a>
+        <a href="boss-tree.html" class="boss-card rank-req" data-rank="req">
+          <span class="card-rank">Обязательный</span>
+          <h3 class="card-name">Проклятое Великое древо</h3>
+        </a>
+        <a href="boss-znatok.html" class="boss-card rank-req" data-rank="req">
+          <span class="card-rank">Обязательный</span>
+          <h3 class="card-name">Знаток кристальных чар</h3>
+        </a>
+        <a href="boss-diakol.html" class="boss-card rank-req" data-rank="req">
+          <span class="card-rank">Обязательный</span>
+          <h3 class="card-name">Дьяконы глубин</h3>
+        </a>
+        <a href="boss-xranitel.html" class="boss-card rank-req" data-rank="req">
+          <span class="card-rank">Обязательный</span>
+          <h3 class="card-name">Хранители Бездны</h3>
+        </a>
+        <a href="boss-volinir.html" class="boss-card rank-req" data-rank="req">
+          <span class="card-rank">Обязательный</span>
+          <h3 class="card-name">Верховный повелитель Вольнир</h3>
+        </a>
+        <a href="boss-pontifik.html" class="boss-card rank-req" data-rank="req">
+          <span class="card-rank">Обязательный</span>
+          <h3 class="card-name">Понтифик Саливан</h3>
+        </a>
+        <a href="boss-gigant.html" class="boss-card rank-req" data-rank="req">
+          <span class="card-rank">Обязательный</span>
+          <h3 class="card-name">Гигант Йорм</h3>
+        </a>
+        <a href="boss-oldtrik.html" class="boss-card rank-req" data-rank="req">
+          <span class="card-rank">Обязательный</span>
+          <h3 class="card-name">Олдрик, пожиратель богов</h3>
+        </a>
+        <a href="boss-dance.html" class="boss-card rank-req" data-rank="req">
+          <span class="card-rank">Обязательный</span>
+          <h3 class="card-name">Танцовщица Холодной долины</h3>
+        </a>
+        <a href="boss-dragon.html" class="boss-card rank-req" data-rank="req">
+          <span class="card-rank">Обязательный</span>
+          <h3 class="card-name">Доспехи драконоборца</h3>
+        </a>
+        <a href="boss-lorian.html" class="boss-card rank-req" data-rank="req">
+          <span class="card-rank">Обязательный</span>
+          <h3 class="card-name">Лотрик, младший принц и Лориан, старший принц</h3>
+        </a>
+        <a href="boss-ghost.html" class="boss-card rank-req" data-rank="req">
+          <span class="card-rank">Обязательный</span>
+          <h3 class="card-name">Душа пепла</h3>
+        </a>
+        <a href="boss-twin-4.html" class="boss-card rank-opt" data-rank="opt">
+          <span class="card-rank">Опциональный</span>
+          <h3 class="card-name">Старый король демонов</h3>
+        </a>
+        <a href="boss-twin-5.html" class="boss-card rank-opt" data-rank="opt">
+          <span class="card-rank">Опциональный</span>
+          <h3 class="card-name">Чемпион Гундир</h3>
+        </a>
+        <a href="boss-twin-6.html" class="boss-card rank-opt" data-rank="opt">
+          <span class="card-rank">Опциональный</span>
+          <h3 class="card-name">Древняя виверна</h3>
+        </a>
+        <a href="boss-twin-7.html" class="boss-card rank-opt" data-rank="opt">
+          <span class="card-rank">Опциональный</span>
+          <h3 class="card-name">Безымянный король</h3>
+        </a>
+        <a href="boss-twin-8.html" class="boss-card rank-dlc" data-rank="dlc">
+          <span class="card-rank">DLC</span>
+          <h3 class="card-name">рыцарь-раб Гаэль</h3>
+        </a>
+        <a href="boss-twin-9.html" class="boss-card rank-dlc" data-rank="dlc">
+          <span class="card-rank">DLC</span>
+          <h3 class="card-name">Копье церкви</h3>
+        </a>
+        <a href="boss-twin-10.html" class="boss-card rank-dlc" data-rank="dlc">
+          <span class="card-rank">DLC</span>
+          <h3 class="card-name">Мидир</h3>
+        </a>
+        <a href="boss-twin-11.html" class="boss-card rank-dlc" data-rank="dlc">
+          <span class="card-rank">DLC</span>
+          <h3 class="card-name">Демон принц</h3>
+        </a>
+        <a href="boss-twin-12.html" class="boss-card rank-dlc" data-rank="dlc">
+          <span class="card-rank">DLC</span>
+          <h3 class="card-name">отец Ариандель и сестра Фриде</h3>
+        </a>
+        <a href="boss-twin-13.html" class="boss-card rank-dlc" data-rank="dlc">
+          <span class="card-rank">DLC</span>
+          <h3 class="card-name">Великий волк</h3>
+        </a>
+        <a href="boss-twin-14.html" class="boss-card rank-dlc" data-rank="dlc">
+          <span class="card-rank">DLC</span>
+          <h3 class="card-name">Хранитель могилы чемпиона</h3>
+        </a>
+      </div>
+    </main>
+
+    <!-- ПРАВАЯ КОЛОНКА: сайдбар. «Содержание» добавляет script.js автоматически -->
+    <aside class="sidebar">
+      <!-- Виджет «Связанные записи»: ссылки на соседние разделы -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Связанные записи</h3>
+        <div class="tag-group">
+          <a href="lore.html" class="tag-btn">Лор</a>
+          <a href="gear.html" class="tag-btn">Экипировка</a>
+          <a href="magic.html" class="tag-btn">Магия</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===================== ПОДВАЛ ===================== -->
+  <div class="foot"><span>Кодекс Лотрика — фанатская вики по Dark Souls III</span><a href="#top">Наверх</a></div>
+</div>
+
+<!-- Общий скрипт: анимации, меню, оглавление, фильтры -->
+<script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- ======================= HEAD: служебная часть страницы ======================= -->
+<meta charset="UTF-8">
+<!-- viewport-fit=cover: контент заходит под «чёлку» телефона, отступы задаёт CSS -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Пиромантия — Кодекс Лотрика</title>
+<meta name="description" content="Пиромантия Dark Souls III: пламя пироманта, заклинания и особенности.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cg transform='rotate(-30 12 12)'%3E%3Ccircle cx='7.3' cy='3.2' r='1.45'/%3E%3Crect x='5.5' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Crect x='14.9' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Ccircle cx='16.7' cy='20.8' r='1.45'/%3E%3C/g%3E%3C/svg%3E">
+<!-- Шрифты: Inter — весь интерфейс и текст, Instrument Serif — курсивные акценты -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&family=Instrument+Serif:ital@1&display=swap">
+<!-- Единый файл стилей для всего сайта (внутри подробные комментарии по разделам) -->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<!-- no-js: пока скрипт не отработал, всё видно сразу; script.js уберёт этот класс -->
+<body style="background:#000;color:#fff" class="no-js">
+
+<!-- СЛОЙ 1: плёночное зерно поверх всей страницы (чисто декор, клики не мешает) -->
+<div class="grain"></div>
+<!-- СЛОЙ 2: мягкое свечение сверху за контентом -->
+<div class="bg-glow"></div>
+
+<!-- СЛОЙ 3: весь видимый контент страницы -->
+<div class="page" id="top">
+
+  <!-- Затемнение под мобильным меню (виден только на телефоне, когда меню открыто) -->
+  <div class="menu-backdrop"></div>
+
+  <!-- ===================== ШАПКА ===================== -->
+  <header class="header">
+    <!-- Логотип: клик ведёт на главную -->
+    <a class="logo appear appear--scale" href="index.html" aria-label="Кодекс Лотрика — на главную" style="--d:.08s">
+      <svg viewBox="0 0 24 24" fill="currentColor"><g transform="rotate(-30 12 12)"><circle cx="7.3" cy="3.2" r="1.45"/><rect x="5.5" y="4.7" width="3.6" height="14.6" rx="1.8"/><rect x="14.9" y="4.7" width="3.6" height="14.6" rx="1.8"/><circle cx="16.7" cy="20.8" r="1.45"/></g></svg>
+      <span>Кодекс<span class="logo-suffix"> Лотрика</span></span>
+    </a>
+    <!-- Главное меню. Текущий раздел помечен aria-current="page" — он подсвечивается -->
+    <nav id="site-nav" aria-label="Основное меню">
+      <a class="appear appear--scale" href="boss.html" style="--d:.16s">Боссы</a>
+      <a class="appear appear--soft" href="gun.html" style="--d:.28s">Оружие</a>
+      <a class="appear appear--scale" href="gear.html" style="--d:.40s">Экипировка</a>
+      <a class="appear appear--soft" href="magic.html" aria-current="page" style="--d:.52s">Магия</a>
+      <a class="appear appear--scale" href="class.html" style="--d:.60s">Классы</a>
+    </nav>
+    <!-- Кнопка справа (на телефоне скрыта) -->
+    <a class="btn btn-solid header-cta appear appear--scale" href="index.html" style="--d:.34s">На главную</a>
+    <!-- Бургер: открывает меню на телефоне -->
+    <button class="burger appear appear--scale" style="--d:.34s" aria-controls="site-nav" aria-expanded="false" aria-label="Открыть меню"><i></i><i></i><i></i></button>
+  </header>
+
+  <!-- ===================== ДВЕ КОЛОНКИ ===================== -->
+  <div class="layout">
+
+    <!-- ЛЕВАЯ КОЛОНКА: основной контент страницы -->
+    <main class="content">
+<!-- Хлебная крошка: возврат к родительскому разделу -->
+      <a class="badge crumb" href="magic.html">← Вся магия</a>
+      <h1>Пиромантия</h1>
+      <p class="lead">Огненная магия, зависящая и от интеллекта, и от веры. Учит ей Корникс из Великого болота.</p>
+<!-- Раздел «Как колдовать» -->
+      <section class="lore-section rv">
+        <h2>Как колдовать</h2>
+        <ul class="tactics-list">
+          <li>Нужно «пламя» (Pyromancy Flame) в левой руке. Его улучшает Корникс из Великого болота.</li>
+          <li>Заклинание настраивается у костра. Пиромант начинает с заклинанием Fireball.</li>
+          <li>Пламя даёт навык Combustion: огонь в руке без траты слота заклинания.</li>
+          <li>В дополнении Ashes of Ariandel появилось Pyromancer's Parting Flame: перед атакующим заклинанием вблизи оно добавляет удар огнём, но слабее обычного по усилению и тратит на 15% больше выносливости.</li>
+        </ul>
+      </section>
+<!-- Раздел «Заклинания пиромантии» -->
+      <section class="lore-section rv">
+        <h2>Заклинания пиромантии</h2>
+        <p>Названия даны в оригинале. Flame Fan пришёл с дополнением The Ringed City.</p>
+        <ul class="chip-list">
+          <li>Fireball</li>
+          <li>Fire Orb</li>
+          <li>Firestorm</li>
+          <li>Fire Surge</li>
+          <li>Fire Whip</li>
+          <li>Bursting Fireball</li>
+          <li>Boulder Heave</li>
+          <li>Acid Surge</li>
+          <li>Toxic Mist</li>
+          <li>Poison Mist</li>
+          <li>Sacred Flame</li>
+          <li>Profaned Flame</li>
+          <li>Carthus Beacon</li>
+          <li>Carthus Flame Arc</li>
+          <li>Black Flame</li>
+          <li>Black Fire Orb</li>
+          <li>Black Serpent</li>
+          <li>Great Chaos Fire Orb</li>
+          <li>Chaos Storm</li>
+          <li>Chaos Bed Vestiges</li>
+          <li>Seething Chaos</li>
+          <li>Floating Chaos</li>
+          <li>Flame Fan</li>
+          <li>Iron Flesh</li>
+          <li>Power Within</li>
+          <li>Profuse Sweat</li>
+          <li>Rapport</li>
+          <li>Warmth</li>
+        </ul>
+      </section>
+<!-- Раздел «Что известно точно» -->
+      <section class="lore-section rv">
+        <h2>Что известно точно</h2>
+        <div class="table-wrap"><table class="data-table"><thead><tr><th>Заклинание</th><th>Описание</th></tr></thead>
+<tbody>
+<tr><td>Fireball</td><td>Базовая пиромантия: бросает огненный шар. Начальное заклинание Пироманта; Корникс продаёт его за 1 000 душ.</td></tr>
+<tr><td>Great Combustion</td><td>Улучшенная Combustion: гигантское пламя в руке. Black Flame его превосходит, но дороже и доступен позже.</td></tr>
+<tr><td>Profaned Flame</td><td>30 FP, 1 слот, 25 интеллекта и 0 веры. Мощный удар по площади с хорошей дальностью и сильным отбрасыванием.</td></tr>
+<tr><td>Sacred Flame</td><td>Пламя, впивающееся во врага и воспламеняющее его.</td></tr>
+<tr><td>Black Flame</td><td>Тёмное пламя: сильный урон и пробитие защиты, затраты FP и выносливости выше, чем у Great Combustion.</td></tr>
+<tr><td>Flame Fan</td><td>Заклинание Зои, потомка пустынных пиромантов. Её можно получить, победив Desert Pyromancer Zoey.</td></tr>
+</tbody></table></div>
+      </section>
+    </main>
+
+    <!-- ПРАВАЯ КОЛОНКА: сайдбар. «Содержание» добавляет script.js автоматически -->
+    <aside class="sidebar">
+      <!-- Виджет «Связанные записи»: ссылки на соседние разделы -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Связанные записи</h3>
+        <div class="tag-group">
+          <a href="magic.html" class="tag-btn">Магия</a>
+          <a href="class.html" class="tag-btn">Классы</a>
+          <a href="gear.html" class="tag-btn">Экипировка</a>
+          <a href="lore.html" class="tag-btn">Лор</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===================== ПОДВАЛ ===================== -->
+  <div class="foot"><span>Кодекс Лотрика — фанатская вики по Dark Souls III</span><a href="#top">Наверх</a></div>
+</div>
+
+<!-- Общий скрипт: анимации, меню, оглавление, фильтры -->
+<script src="script.js" defer></script>
+</body>
+</html>

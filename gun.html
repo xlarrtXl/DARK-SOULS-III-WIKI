@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- ======================= HEAD: служебная часть страницы ======================= -->
+<meta charset="UTF-8">
+<!-- viewport-fit=cover: контент заходит под «чёлку» телефона, отступы задаёт CSS -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Оружие — Кодекс Лотрика</title>
+<meta name="description" content="Все виды оружия Dark Souls III: мечи, топоры, копья, кнуты, луки и другие.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cg transform='rotate(-30 12 12)'%3E%3Ccircle cx='7.3' cy='3.2' r='1.45'/%3E%3Crect x='5.5' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Crect x='14.9' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Ccircle cx='16.7' cy='20.8' r='1.45'/%3E%3C/g%3E%3C/svg%3E">
+<!-- Шрифты: Inter — весь интерфейс и текст, Instrument Serif — курсивные акценты -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&family=Instrument+Serif:ital@1&display=swap">
+<!-- Единый файл стилей для всего сайта (внутри подробные комментарии по разделам) -->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<!-- no-js: пока скрипт не отработал, всё видно сразу; script.js уберёт этот класс -->
+<body style="background:#000;color:#fff" class="no-js">
+
+<!-- СЛОЙ 1: плёночное зерно поверх всей страницы (чисто декор, клики не мешает) -->
+<div class="grain"></div>
+<!-- СЛОЙ 2: мягкое свечение сверху за контентом -->
+<div class="bg-glow"></div>
+
+<!-- СЛОЙ 3: весь видимый контент страницы -->
+<div class="page" id="top">
+
+  <!-- Затемнение под мобильным меню (виден только на телефоне, когда меню открыто) -->
+  <div class="menu-backdrop"></div>
+
+  <!-- ===================== ШАПКА ===================== -->
+  <header class="header">
+    <!-- Логотип: клик ведёт на главную -->
+    <a class="logo appear appear--scale" href="index.html" aria-label="Кодекс Лотрика — на главную" style="--d:.08s">
+      <svg viewBox="0 0 24 24" fill="currentColor"><g transform="rotate(-30 12 12)"><circle cx="7.3" cy="3.2" r="1.45"/><rect x="5.5" y="4.7" width="3.6" height="14.6" rx="1.8"/><rect x="14.9" y="4.7" width="3.6" height="14.6" rx="1.8"/><circle cx="16.7" cy="20.8" r="1.45"/></g></svg>
+      <span>Кодекс<span class="logo-suffix"> Лотрика</span></span>
+    </a>
+    <!-- Главное меню. Текущий раздел помечен aria-current="page" — он подсвечивается -->
+    <nav id="site-nav" aria-label="Основное меню">
+      <a class="appear appear--scale" href="boss.html" style="--d:.16s">Боссы</a>
+      <a class="appear appear--soft" href="gun.html" aria-current="page" style="--d:.28s">Оружие</a>
+      <a class="appear appear--scale" href="gear.html" style="--d:.40s">Экипировка</a>
+      <a class="appear appear--soft" href="magic.html" style="--d:.52s">Магия</a>
+      <a class="appear appear--scale" href="class.html" style="--d:.60s">Классы</a>
+    </nav>
+    <!-- Кнопка справа (на телефоне скрыта) -->
+    <a class="btn btn-solid header-cta appear appear--scale" href="index.html" style="--d:.34s">На главную</a>
+    <!-- Бургер: открывает меню на телефоне -->
+    <button class="burger appear appear--scale" style="--d:.34s" aria-controls="site-nav" aria-expanded="false" aria-label="Открыть меню"><i></i><i></i><i></i></button>
+  </header>
+
+  <!-- ===================== ДВЕ КОЛОНКИ ===================== -->
+  <div class="layout">
+
+    <!-- ЛЕВАЯ КОЛОНКА: основной контент страницы -->
+    <main class="content">
+<!-- Хлебная крошка: возврат к родительскому разделу -->
+      <a class="badge crumb" href="index.html">← На главную</a>
+      <h1>Оружие</h1>
+      <p class="lead">В Dark Souls III огромный выбор оружия под любой стиль игры: от быстрых кинжалов до тяжёлых двуручников.</p>
+<!-- Раздел «Виды оружия» -->
+      <section class="lore-section rv">
+        <h2>Виды оружия</h2>
+        <div class="grid">
+        <a class="card rv" href="gun-dagger.html" style="--rd:0.00s"><h3>Кинжалы</h3><span class="en">Daggers</span><p>Короткие быстрые клинки с колющими и режущими атаками.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="gun-straight.html" style="--rd:0.08s"><h3>Прямые мечи</h3><span class="en">Straight Swords</span><p>Универсальное оружие: баланс режущих и колющих атак.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="gun-greatsword.html" style="--rd:0.16s"><h3>Двуручные мечи</h3><span class="en">Greatswords</span><p>Тяжёлые мечи с большей дальностью и уроном, чем у прямых, но более медленные.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="gun-ultra.html" style="--rd:0.00s"><h3>Огромные мечи</h3><span class="en">Ultra Greatswords</span><p>Самые тяжёлые мечи: медленные, но с огромным уроном.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="gun-curved.html" style="--rd:0.08s"><h3>Кривые мечи</h3><span class="en">Curved Swords</span><p>Лёгкие клинки с меньшей дальностью, чем у других мечей, но чуть более быстрые.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="gun-curvedgreat.html" style="--rd:0.16s"><h3>Кривые двуручные мечи</h3><span class="en">Curved Greatswords</span><p>Медленнее двуручных мечей, но быстрее огромных.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="gun-thrusting.html" style="--rd:0.00s"><h3>Колющие мечи</h3><span class="en">Thrusting Swords</span><p>Тонкие клинки для точных выпадов.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="gun-katana.html" style="--rd:0.08s"><h3>Катаны</h3><span class="en">Katanas</span><p>Занимают промежуточное положение по скорости и дальности, хорошо показывают себя при контратаках.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="gun-axe.html" style="--rd:0.16s"><h3>Топоры</h3><span class="en">Axes</span><p>Режущее оружие, наносящее урон в основном от силы.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="gun-greataxe.html" style="--rd:0.00s"><h3>Большие топоры</h3><span class="en">Greataxes</span><p>Медленные и тяжёлые для обращения, но в основном легче огромных мечей и больших молотов.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="gun-hammer.html" style="--rd:0.08s"><h3>Молоты и дубины</h3><span class="en">Hammers</span><p>Дробящее оружие: больше физического урона и урона по равновесию, чем у топоров и прямых мечей.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="gun-spear.html" style="--rd:0.16s"><h3>Копья</h3><span class="en">Spears</span><p>Оружие с большой дальностью: бьёт издали, оставаясь за щитом.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="gun-halberd.html" style="--rd:0.00s"><h3>Алебарды</h3><span class="en">Halberds</span><p>Древковое оружие с широкими режущими и колющими атаками.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="gun-reaper.html" style="--rd:0.08s"><h3>Косы</h3><span class="en">Reapers</span><p>Оружие с изогнутым лезвием и широкими режущими ударами.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="gun-whip.html" style="--rd:0.16s"><h3>Кнуты</h3><span class="en">Whips</span><p>Оружие с очень большой дальностью и нестандартным стилем боя.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="gun-fist.html" style="--rd:0.00s"><h3>Кулаки и когти</h3><span class="en">Fists and Claws</span><p>Накладки на руки: рукопашный бой.</p><span class="card-more">Подробнее →</span></a>
+        <a class="card rv" href="gun-ranged.html" style="--rd:0.08s"><h3>Луки и арбалеты</h3><span class="en">Bows and Crossbows</span><p>Оружие дальнего боя: луки, большие луки и арбалеты.</p><span class="card-more">Подробнее →</span></a>
+        </div>
+      </section>
+<!-- Раздел «Как работает оружие» -->
+      <section class="lore-section rv">
+        <h2>Как работает оружие</h2>
+        <ul class="tactics-list">
+          <li>У оружия есть тип урона (физический, магический, огненный, молниеносный) и требования к характеристикам: сила, ловкость, интеллект, вера.</li>
+          <li>Бонус к урону зависит от скалирования оружия с вашими характеристиками.</li>
+          <li>Оружие улучшают у кузнеца Андре; титанит поднимает его уровень, а камни меняют тип урона и скалирование.</li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- ПРАВАЯ КОЛОНКА: сайдбар. «Содержание» добавляет script.js автоматически -->
+    <aside class="sidebar">
+      <!-- Виджет «Связанные записи»: ссылки на соседние разделы -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Связанные записи</h3>
+        <div class="tag-group">
+          <a href="gun.html" class="tag-btn">Оружие</a>
+          <a href="gear-upgrades.html" class="tag-btn">Улучшение</a>
+          <a href="class.html" class="tag-btn">Классы</a>
+          <a href="gear.html" class="tag-btn">Экипировка</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===================== ПОДВАЛ ===================== -->
+  <div class="foot"><span>Кодекс Лотрика — фанатская вики по Dark Souls III</span><a href="#top">Наверх</a></div>
+</div>
+
+<!-- Общий скрипт: анимации, меню, оглавление, фильтры -->
+<script src="script.js" defer></script>
+</body>
+</html>
