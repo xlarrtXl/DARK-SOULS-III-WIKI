@@ -14,10 +14,25 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&family=Instrument+Serif:ital@1&display=swap">
 <!-- Единый файл стилей для всего сайта (внутри подробные комментарии по разделам) -->
 <link rel="stylesheet" href="style.css">
+<!-- Яндекс.Метрика (счётчик посещений). Размещён в <head> каждой страницы -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113541265', 'ym');
+
+    ym(113541265, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<!-- /Яндекс.Метрика -->
 </head>
 
 <!-- no-js: пока скрипт не отработал, всё видно сразу; script.js уберёт этот класс -->
 <body style="background:#000;color:#fff" class="no-js">
+<!-- Яндекс.Метрика для браузеров без JavaScript -->
+<noscript><div><img src="https://mc.yandex.ru/watch/113541265" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
 
 <!-- СЛОЙ 1: плёночное зерно поверх всей страницы (чисто декор, клики не мешает) -->
 <div class="grain"></div>
@@ -60,6 +75,42 @@
       <a class="badge crumb" href="boss.html">← Все боссы</a>
       <!-- Заголовок страницы -->
       <h1>Проклятое Великое древо</h1>
+<!-- Карточка босса: таблица характеристик -->
+      <div class="boss-overview">
+                <div class="boss-stats-box">
+                    <h3>Характеристики</h3>
+                    <table class="stats-table">
+                        <tbody>
+                            <tr>
+                                <th>Здоровье (NG)</th>
+                                <td>5405</td>
+                            </tr>
+                            <tr>
+                                <th>Души (NG)</th>
+                                <td>7 000</td>
+                            </tr>
+                            <tr>
+                                <th>Уязвимость</th>
+                                <td>Рубящий урон, Колющий урон, Огонь</td>
+                            </tr>
+                            <tr>
+                                <th>Сопротивление</th>
+                                <td>Яд, Кровотечение, Обморожение</td>
+                            </tr>
+                            <tr>
+                                <th>Локация</th>
+                                <td>Поселение нежити</td>
+                            </tr>
+                            <tr>
+                                <th>Награда</th>
+                                <td>Плавильная печь, Душа Проклятого Великого древа</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+
 <!-- Раздел «Описание»: заголовок h2 + текст/списки. Новые разделы — копированием этого блока -->
       <section class="lore-section rv">
         <h2>Описание</h2>

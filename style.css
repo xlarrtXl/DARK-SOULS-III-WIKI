@@ -367,17 +367,8 @@ h1.hero-title, .hero h1 { display: flex; flex-direction: column; align-items: ce
 .stats-list li strong { color: #fff; font-weight: 400; }
 
 
-/* 12. КАРТОЧКА БОССА: КАРТИНКА + ТАБЛИЦА ------------------------------------------ */
-.boss-overview { display: grid; grid-template-columns: minmax(0, 320px) 1fr; gap: 20px; margin: 8px 0 8px; }
-.boss-img-box {
-  border-radius: 10px; overflow: hidden; border: 1px solid rgba(198,198,198,.28);
-  background: radial-gradient(80% 60% at 50% 30%, rgba(160,180,215,.14), rgba(0,0,0,.6));
-  min-height: 260px; display: flex; align-items: center; justify-content: center;
-}
-.boss-img { width: 100%; height: 100%; object-fit: cover; }
-.boss-img-box.is-empty { color: var(--muted); font-size: 13px; } /* если картинки нет — остаётся тёмная плашка */
-.boss-img-box.is-empty img { display: none; }
-.boss-img-box.is-empty::after { content: "Изображение скоро появится"; }
+/* 12. КАРТОЧКА БОССА: ТАБЛИЦА ХАРАКТЕРИСТИК ------------------------------------------ */
+.boss-overview { display: block; margin: 8px 0 8px; }
 
 .boss-stats-box { border-radius: 10px; padding: 22px 24px; border: 1px solid rgba(198,198,198,.28); background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(0,0,0,.55) 55%); }
 .boss-stats-box h3 { font-size: 18px; font-weight: 500; letter-spacing: -0.03em; margin-bottom: 12px; }
@@ -521,7 +512,6 @@ h1.hero-title, .hero h1 { display: flex; flex-direction: column; align-items: ce
   /* внутренние страницы: сайдбар уходит под текст */
   .layout { grid-template-columns: 1fr; gap: 32px; padding-top: 24px; }
   .sidebar { position: static; }
-  .boss-overview { grid-template-columns: 1fr; }
   .stats-list { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
